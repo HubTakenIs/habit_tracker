@@ -1,7 +1,7 @@
 # Habit Tracker
 I will attempt at re-creating the github commit tracker in a CLI.
 
-why you ask? Great question, the only thing that motivates me to program is a litte square box and the number of days I have programmed in a row (my streak on bootdev). I will try to recreate this ratbehaviour for other aspects of my life therefore the little square boxes will need more features.
+why you ask? Great question, the only thing that motivates me to program is a litte square box and the number of days I have programmed in a row (my streak on bootdev). I will try to recreate this rat behaviour for other aspects of my life therefore the little square boxes will need more features.
 
 1. track user habit and activities
 2. show a little github like graphic to visualise your streak
