@@ -17,3 +17,8 @@ class DataHelper():
             print(f"Data folder needs setting up.")
             print(f"Will create data folder")
             os.mkdir(data_dir_path)
+    def setup_data_file(self, file_name):
+        data_dir_path = os.path.abspath("./data/")
+        if os.path.exists(data_dir_path):
+            f = open(file_name, "x")
+
