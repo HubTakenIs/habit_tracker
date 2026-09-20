@@ -2,7 +2,7 @@ import os
 
 class DataHelper():
     def __init__(self):
-        self.setup_data_folder()
+        pass
     
     def load_data():
         pass
