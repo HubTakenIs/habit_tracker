@@ -19,21 +19,20 @@ def list_of_dates():
     date_list = []
     for x in range(num_of_dates):
         date_list.append(start.date() + datetime.timedelta(days=x))
-    print(date_list)
     return date_list
 
 
 
-def setup_data_file(self, file_name):
+def setup_data_file(file_name):
     data_dir_path = os.path.abspath("./data/")
-    if os.path.exists(data_dir_path):
-        f = open(file_name, "x")
-        f.close()
+    file_dir = os.path.join(data_dir_path, file_name)
     f = open(file_name, "a")
-    f.write("Date, Ticked")
+    f.write("Date, Ticked\n")
+    date_list = list_of_dates()
+    for date in date_list:
+        f.write(f"{date},False\n")
+    f.close()
     
 
 if __name__ == "__main__":
-    ml = list_of_dates()
-    for item in ml:
-        print(item)
+    setup_data_file("programming")
