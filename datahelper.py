@@ -26,13 +26,35 @@ def list_of_dates():
 def setup_data_file(file_name):
     data_dir_path = os.path.abspath("./data/")
     file_dir = os.path.join(data_dir_path, file_name)
-    f = open(file_name, "a")
+    f = open(file_dir, "a")
     f.write("Date, Ticked\n")
     date_list = list_of_dates()
     for date in date_list:
         f.write(f"{date},False\n")
     f.close()
     
+
+def tick_date(file_name, date):
+    data_dir_path = os.path.abspath("./data/")
+    file_dir = os.path.join(data_dir_path, file_name)
+    f = open(file_dir, "r")
+    file_lines = f.readlines()
+    f.close()
+    print("I have gotten the lines from file.")
+    for i in range(len(file_lines)):
+        line = file_lines[i]
+        split = line.split(",")
+        line_date = split[0]
+        line_tick = split[1]
+        # covert types and check
+        if line_date == date:
+            print(f"Date to be ticked found at index: {i}")
+            new_line = f"{line_date},{True}\n"
+            file_lines[i] = new_line
+    f = open(file_dir, "w")
+    f.writelines(file_lines)
+    f.close()
+
 
 if __name__ == "__main__":
     setup_data_file("programming")
