@@ -1,6 +1,7 @@
 import os
 import click
 import datetime
+import calendar
 
 @click.command()
 @click.option("--path", default="./data", help="path to data directory.")
@@ -55,6 +56,28 @@ def tick_date(file_name, date):
     f.writelines(file_lines)
     f.close()
 
+def display_habit(file_name):
+    
+    data_dir_path = os.path.abspath("./data/")
+    file_dir = os.path.join(data_dir_path, file_name)
+    f = open(file_dir, "r")
+    lines = f.readlines()
+    f.close()
+    top_line = ""
+    month_names = list(calendar.month_name)
+    for month in month_names:
+        if month:
+            top_line += f" {month} "
+    print(top_line)
+    count = 0
+    months = []
+    out = ""
+
+
+
+
+
+
 
 if __name__ == "__main__":
-    setup_data_file("programming")
+    display_habit("programming.csv")
